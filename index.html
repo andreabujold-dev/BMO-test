@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Moneris | Order a Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1B3A52;
+  --navy-dark: #0f2539;
+  --red: #CC0000;
+  --blue-link: #1A6EBF;
+  --cyan: #4A9FBE;
+  --gray-bg: #F7F8FA;
+  --gray-light: #F0F1F3;
+  --gray-med: #E0E2E6;
+  --text-dark: #1A2B3C;
+  --text-gray: #5A6472;
+  --text-light: #8A949E;
+  --white: #FFFFFF;
+  --border: #D8DCE0;
+  --transition: all 0.18s ease;
+}
+html { font-size: 16px; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--white); color: var(--text-dark); min-height: 100vh; }
+
+/* ── HEADER ── */
+.header { display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 68px; background: var(--white); border-bottom: 1px solid var(--gray-med); position: sticky; top: 0; z-index: 100; }
+.header-logos { display: flex; align-items: center; }
+.logo-divider { width: 1px; height: 36px; background: var(--gray-med); margin: 0 1.25rem; }
+.header-right { display: flex; align-items: center; gap: 1.5rem; }
+.header-phone { display: flex; align-items: center; gap: 8px; color: var(--text-dark); font-size: 14px; font-weight: 600; text-decoration: none; }
+.header-lang { display: flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--text-dark); cursor: pointer; background: none; border: none; font-family: inherit; }
+
+/* ── HERO ── */
+.hero-section { display: grid; grid-template-columns: 1fr 1fr; max-width: 1200px; margin: 0 auto; padding: 3.5rem 2.5rem; gap: 3rem; align-items: center; }
+.hero-h1 { font-size: 34px; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 1.25rem; }
+.hero-sub { font-size: 15px; color: var(--text-gray); line-height: 1.65; }
+.hero-image img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; display: block; }
+
+/* ── QUIZ BANNER ── */
+.quiz-banner { background: var(--navy); padding: 3rem 2.5rem; position: relative; overflow: hidden; }
+.quiz-banner::after { content: ''; position: absolute; right: -60px; top: -60px; width: 420px; height: 420px; border-radius: 50%; border: 42px solid rgba(255,255,255,0.04); pointer-events: none; }
+.quiz-banner::before { content: ''; position: absolute; right: 50px; top: 10px; width: 300px; height: 300px; border-radius: 50%; border: 32px solid rgba(74,159,190,0.07); pointer-events: none; }
+.quiz-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.quiz-heading { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
+.quiz-sub { font-size: 14px; color: rgba(255,255,255,0.68); margin-bottom: 1.75rem; }
+.quiz-form { display: flex; align-items: flex-end; gap: 1rem; flex-wrap: wrap; }
+.quiz-field { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 220px; }
+.quiz-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.5px; }
+.quiz-select { appearance: none; -webkit-appearance: none; background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235A6472' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center; border: 1.5px solid var(--border); border-radius: 6px; padding: 11px 38px 11px 14px; font-size: 14px; font-family: inherit; color: var(--text-dark); cursor: pointer; outline: none; transition: var(--transition); width: 100%; }
+.quiz-select:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(74,159,190,0.18); }
+.radio-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.radio-pill { position: relative; }
+.radio-pill input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.radio-pill label { display: flex; align-items: center; gap: 7px; padding: 10px 16px; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 6px; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.85); font-size: 14px; font-weight: 500; cursor: pointer; transition: var(--transition); white-space: nowrap; user-select: none; }
+.radio-pill label::before { content: ''; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-radius: 50%; flex-shrink: 0; transition: var(--transition); }
+.radio-pill input[type="radio"]:checked + label { border-color: var(--white); background: rgba(255,255,255,0.15); color: var(--white); }
+.radio-pill input[type="radio"]:checked + label::before { background: var(--white); border-color: var(--white); box-shadow: inset 0 0 0 4px var(--navy); }
+.radio-pill label:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.12); }
+.btn-quiz-submit { background: var(--red); color: var(--white); border: none; padding: 12px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; transition: var(--transition); white-space: nowrap; flex-shrink: 0; opacity: 0.4; pointer-events: none; }
+.btn-quiz-submit.rdy { opacity: 1; pointer-events: all; }
+.btn-quiz-submit.rdy:hover { background: #aa0000; }
+
+/* ── RESULTS ── */
+.results-panel { background: var(--gray-bg); border-top: 3px solid var(--cyan); padding: 2.5rem 2.5rem 3rem; display: none; }
+.results-inner { max-width: 1200px; margin: 0 auto; }
+.results-label { font-size: 11px; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+.results-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem; }
+.results-sub { font-size: 14px; color: var(--text-gray); margin-bottom: 2rem; }
+.results-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+.result-card { background: var(--white); border: 1.5px solid var(--gray-med); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; text-align: center; transition: box-shadow 0.18s; }
+.result-card.best { border-color: var(--cyan); box-shadow: 0 4px 20px rgba(74,159,190,0.18); }
+.result-best-badge { display: inline-block; background: var(--cyan); color: var(--white); border-radius: 50px; padding: 3px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.75rem; }
+.result-spacer { height: 26px; }
+.result-icon { font-size: 50px; margin-bottom: 0.75rem; }
+.result-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+.result-desc { font-size: 12px; color: var(--text-gray); line-height: 1.6; margin-bottom: 1.25rem; flex: 1; }
+.result-btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.btn-result-order { background: var(--navy); color: var(--white); border: none; padding: 10px 16px; border-radius: 5px; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer; transition: var(--transition); }
+.btn-result-order:hover { background: #0f2a3a; }
+.btn-result-specialist { background: var(--white); color: var(--text-dark); border: 1.5px solid var(--border); padding: 10px 16px; border-radius: 5px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; transition: var(--transition); }
+.btn-result-specialist:hover { border-color: var(--navy); color: var(--navy); }
+.results-reset { font-size: 13px; color: var(--text-gray); text-align: center; }
+.results-reset a { color: var(--navy); font-weight: 600; cursor: pointer; }
+.results-reset a:hover { color: var(--red); }
+
+/* ── SWITCH BANNER ── */
+.switch-banner { background: var(--navy-dark); padding: 2.25rem 2.5rem; position: relative; overflow: hidden; }
+.switch-arc-1 { position: absolute; right: -30px; top: -90px; width: 340px; height: 340px; border-radius: 50%; border: 38px solid rgba(255,255,255,0.05); pointer-events: none; }
+.switch-arc-2 { position: absolute; right: 55px; top: -30px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(74,159,190,0.07); pointer-events: none; }
+.switch-arc-3 { position: absolute; right: -80px; top: -140px; width: 460px; height: 460px; border-radius: 50%; border: 26px solid rgba(204,0,0,0.06); pointer-events: none; }
+.switch-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.switch-h2 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; line-height: 1.35; max-width: 600px; }
+.switch-sub { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; }
+.btn-switch { display: inline-block; padding: 10px 22px; border: 1.5px solid var(--white); border-radius: 4px; color: var(--white); font-size: 13px; font-weight: 600; font-family: inherit; background: transparent; cursor: pointer; transition: var(--transition); }
+.btn-switch:hover { background: rgba(255,255,255,0.1); }
+
+/* ── GATE MODAL ── */
+.gate-overlay { display: none; position: fixed; inset: 0; background: rgba(15,37,57,0.55); z-index: 1000; align-items: center; justify-content: center; padding: 1.25rem; }
+.gate-overlay.open { display: flex; }
+.gate-modal { background: var(--white); border-radius: 14px; max-width: 440px; width: 100%; padding: 2.25rem 2rem 2rem; position: relative; box-shadow: 0 20px 60px rgba(15,37,57,0.35); animation: gateIn 0.22s ease; }
+@keyframes gateIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.gate-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 20px; color: var(--text-light); cursor: pointer; line-height: 1; padding: 4px; }
+.gate-close:hover { color: var(--text-dark); }
+.gate-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(74,159,190,0.12); color: var(--cyan); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem; }
+.gate-title { font-size: 19px; font-weight: 800; color: var(--navy); line-height: 1.35; margin-bottom: 0.4rem; }
+.gate-sub { font-size: 13px; color: var(--text-gray); line-height: 1.55; margin-bottom: 1.5rem; }
+.gate-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.1rem; }
+.gate-field label { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+.gate-field label .opt { font-weight: 500; color: var(--text-light); text-transform: none; }
+.gate-input { border: 1.5px solid var(--border); border-radius: 6px; padding: 11px 14px; font-size: 14px; font-family: inherit; color: var(--text-dark); outline: none; transition: var(--transition); }
+.gate-input:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(74,159,190,0.18); }
+.gate-input.err { border-color: var(--red); }
+.gate-error { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
+.gate-error.show { display: block; }
+.btn-gate-submit { width: 100%; background: var(--red); color: var(--white); border: none; padding: 13px 16px; border-radius: 6px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; transition: var(--transition); }
+.btn-gate-submit:hover { background: #aa0000; }
+.gate-fineprint { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 0.9rem; line-height: 1.5; }
+
+@media (max-width: 860px) {
+  .hero-section { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
+  .hero-image img { height: 220px; }
+  .results-grid { grid-template-columns: 1fr; }
+  .quiz-form { flex-direction: column; align-items: stretch; }
+  .btn-quiz-submit { width: 100%; }
+  .header { padding: 0 1.25rem; }
+  .quiz-banner, .switch-banner { padding: 2rem 1.25rem; }
+  .results-panel { padding: 2rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logos">
+    <svg height="34" viewBox="0 0 145 40" xmlns="http://www.w3.org/2000/svg" aria-label="Moneris">
+      <text x="0" y="30" font-family="'Inter',Arial,sans-serif" font-size="26" font-weight="700" fill="#1a1a1a" letter-spacing="-0.5">Moneris</text>
+      <g transform="translate(113,5)">
+        <path d="M13 1C20.2 1 26 6.8 26 14S20.2 27 13 27C8.2 27 4 24.2 2 20" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M13 6C17.8 6 22 9.8 22 14.5S17.8 23 13 23C10 23 7.2 21.4 5.8 18.8" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M13 11C15.4 11 17.4 12.8 17.4 15S15.4 19 13 19" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+        <text x="24" y="5" font-family="Arial" font-size="5.5" fill="#1a1a1a">®</text>
+      </g>
+    </svg>
+    <div class="logo-divider"></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:34px;height:34px;background:#CC0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:11px;letter-spacing:-0.5px;font-family:'Inter',sans-serif;">BMO</div>
+      <span style="font-weight:800;font-size:17px;color:#0069B4;letter-spacing:-0.3px;">BMO</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <a href="tel:18775587372" class="header-phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A9FBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.2 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      1 (877) 558-7372
+    </a>
+    <button class="header-lang">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5A6472" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      English ▾
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-text">
+    <h1 class="hero-h1">Order your Moneris solution today.</h1>
+    <p class="hero-sub">Scalable, secure and trusted by Canadian businesses coast to coast to coast. Select your commerce solution below or contact us for a custom quote.</p>
+  </div>
+  <div class="hero-image">
+    <img src="data:image/png;base64,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" alt="Person tapping credit card on Moneris terminal at café" />
+  </div>
+</section>
+
+<!-- QUIZ BANNER -->
+<div class="quiz-banner">
+  <div class="quiz-inner">
+    <div class="quiz-heading">Find your recommended solution.</div>
+    <div class="quiz-sub">Answer two quick questions and we'll match you to the right fit.</div>
+    <div class="quiz-form">
+      <div class="quiz-field">
+        <label class="quiz-label" for="q1-industry">What type of business do you operate?</label>
+        <select class="quiz-select" id="q1-industry" onchange="quizUpdate()">
+          <option value="">Select your industry…</option>
+          <option value="retail">Retail</option>
+          <option value="restaurant">Restaurant</option>
+          <option value="health">Health &amp; beauty</option>
+          <option value="professional">Professional services</option>
+          <option value="enterprise">Enterprise</option>
+          <option value="public">Public sector</option>
+          <option value="nonprofit">Not-for-profit</option>
+        </select>
+      </div>
+      <div class="quiz-field">
+        <div class="quiz-label">How do you accept payments today?</div>
+        <div class="radio-pills">
+          <div class="radio-pill">
+            <input type="radio" name="q2" id="pay-inperson" value="in-person" onchange="quizUpdate()">
+            <label for="pay-inperson">In-person</label>
+          </div>
+          <div class="radio-pill">
+            <input type="radio" name="q2" id="pay-online" value="online" onchange="quizUpdate()">
+            <label for="pay-online">Online</label>
+          </div>
+          <div class="radio-pill">
+            <input type="radio" name="q2" id="pay-both" value="both" onchange="quizUpdate()">
+            <label for="pay-both">Both</label>
+          </div>
+        </div>
+      </div>
+      <button class="btn-quiz-submit" id="quiz-btn" onclick="openGate()">See my recommendation →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS (shown after gate is completed) -->
+<div class="results-panel" id="results-panel">
+  <div class="results-inner">
+    <div class="results-label">Recommended for you</div>
+    <div class="results-title">Here's what we'd recommend.</div>
+    <div class="results-sub">Based on your answers, these are the best Moneris solutions for your business.</div>
+    <div class="results-grid" id="results-grid"></div>
+    <div class="results-reset">Not what you were expecting? <a onclick="resetQuiz()">Start over</a> or <a href="tel:18775587372">talk to a specialist</a></div>
+  </div>
+</div>
+
+<!-- ALREADY WITH MONERIS -->
+<div class="switch-banner">
+  <div class="switch-arc-1"></div>
+  <div class="switch-arc-2"></div>
+  <div class="switch-arc-3"></div>
+  <div class="switch-inner">
+    <div class="switch-h2">Already with Moneris and looking to switch or upgrade your solution?</div>
+    <div class="switch-sub">Connect directly with our expert sales team to see how we can support your business.</div>
+    <button class="btn-switch">Talk to an expert</button>
+  </div>
+</div>
+
+<!-- LEAD-CAPTURE GATE -->
+<div class="gate-overlay" id="gate-overlay">
+  <div class="gate-modal">
+    <button class="gate-close" onclick="closeGate()" aria-label="Close">✕</button>
+    <div class="gate-icon">✉</div>
+    <div class="gate-title">Before we show your personalized recommendations, where should we send your results?</div>
+    <div class="gate-sub">We'll email a copy of your recommendation so you can review it anytime.</div>
+    <div class="gate-field">
+      <label for="gate-firstname">First name <span class="opt">(optional)</span></label>
+      <input class="gate-input" type="text" id="gate-firstname" placeholder="Jordan">
+    </div>
+    <div class="gate-field">
+      <label for="gate-email">Business email <span style="color:var(--red);">*</span></label>
+      <input class="gate-input" type="email" id="gate-email" placeholder="you@yourbusiness.com" oninput="clearGateError()">
+      <div class="gate-error" id="gate-error">Please enter a valid business email address.</div>
+    </div>
+    <button class="btn-gate-submit" onclick="submitGate()">Show My Results →</button>
+    <div class="gate-fineprint">By continuing, you agree to receive your results and occasional communications from Moneris. You can unsubscribe anytime.</div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS = {
+  goTerminal: { name: 'Moneris® Go Terminal', desc: 'Next-gen portable terminal — PCI 7-ready, all-day battery, 7" display. Take payments countertop or curbside.', icon: '💳' },
+  goRetail:   { name: 'Moneris® Go Retail POS', desc: 'Portable POS for small businesses. Sell in-store and on the go with everything in one place.', icon: '🛍️' },
+  monerisOnline: { name: 'Moneris® Online', desc: 'All-in-one ecommerce solution built with Wix. Accept payments and sell online securely.', icon: '💻' }
+};
+
+function getOrder(payment) {
+  if (payment === 'online') return ['monerisOnline','goRetail','goTerminal'];
+  if (payment === 'both')   return ['goRetail','monerisOnline','goTerminal'];
+  return ['goTerminal','goRetail','monerisOnline'];
+}
+
+function quizUpdate() {
+  const ind = document.getElementById('q1-industry').value;
+  const pay = document.querySelector('input[name="q2"]:checked');
+  document.getElementById('quiz-btn').classList.toggle('rdy', !!(ind && pay));
+}
+
+/* Step 1: quiz complete -> open lead-capture gate (results stay hidden) */
+function openGate() {
+  const ind = document.getElementById('q1-industry').value;
+  const pay = document.querySelector('input[name="q2"]:checked');
+  if (!ind || !pay) return;
+  document.getElementById('gate-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('gate-firstname').focus(), 100);
+}
+
+function closeGate() {
+  document.getElementById('gate-overlay').classList.remove('open');
+}
+
+function clearGateError() {
+  document.getElementById('gate-email').classList.remove('err');
+  document.getElementById('gate-error').classList.remove('show');
+}
+
+function isValidEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
+
+/* Step 2: gate submitted -> validate, then reveal results */
+function submitGate() {
+  const emailEl = document.getElementById('gate-email');
+  const email = emailEl.value.trim();
+  if (!isValidEmail(email)) {
+    emailEl.classList.add('err');
+    document.getElementById('gate-error').classList.add('show');
+    emailEl.focus();
+    return;
+  }
+  closeGate();
+  showResults();
+}
+
+function showResults() {
+  const ind = document.getElementById('q1-industry').value;
+  const payEl = document.querySelector('input[name="q2"]:checked');
+  if (!ind || !payEl) return;
+  const order = getOrder(payEl.value);
+  document.getElementById('results-grid').innerHTML = order.map((k,i) => {
+    const p = PRODUCTS[k];
+    return `<div class="result-card${i===0?' best':''}">${i===0?'<div class="result-best-badge">Best match</div>':`<div class="result-spacer"></div>`}<div class="result-icon">${p.icon}</div><div class="result-name">${p.name}</div><div class="result-desc">${p.desc}</div><div class="result-btns"><button class="btn-result-order">Order now</button><button class="btn-result-specialist">Talk to a specialist</button></div></div>`;
+  }).join('');
+  const panel = document.getElementById('results-panel');
+  panel.style.display = 'block';
+  setTimeout(() => panel.scrollIntoView({behavior:'smooth',block:'start'}), 50);
+}
+
+function resetQuiz() {
+  document.getElementById('q1-industry').value = '';
+  const c = document.querySelector('input[name="q2"]:checked');
+  if (c) c.checked = false;
+  document.getElementById('quiz-btn').classList.remove('rdy');
+  document.getElementById('results-panel').style.display = 'none';
+  document.getElementById('gate-firstname').value = '';
+  document.getElementById('gate-email').value = '';
+  clearGateError();
+  document.querySelector('.quiz-banner').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
